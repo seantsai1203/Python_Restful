@@ -1,0 +1,10 @@
+from flask import Flask #引入套件
+app = Flask(__name__) #網站/API server 裝進 app 這變數
+
+@app.route('/') #路由 Python 裝飾語法
+def index():
+    return 'welcome' #進入首頁之後回傳
+    
+if __name__=='__main__': #檢查是否用python 3指令(主程式)
+    app.debug = True #debug 開啟, 以記錄錯誤訊息
+    app.run(host='0.0.0.0',port=5000) #開啟網站 port 可指定其它位置 3999 /4000
